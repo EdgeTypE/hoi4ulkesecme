@@ -1,4 +1,8 @@
 <input type="number" id="playerNumber" placeholder="Oyuncu sayısı giriniz">
+<select id="countryOption" required>
+    <option value="big">Sadece Büyük Ülkeler</option>
+    <option value="all">Tüm Ülkeler</option> 
+</select>
 <button id="calculate" onclick="showCountries()">Hesapla</button>
 <div id="output"></div>
 
@@ -9,17 +13,118 @@
   </head>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  
+
 <script type="text/javascript">
-  var countries = ["Alamanya", "Türkiye", "Amerika", "İtalya", "Fransa", "İngiltere", "Uganda", "Portekiz", "Rusya", "İspanya"];
   function showCountries() {
+    // input kutusundan oyuncu sayısını al
     var playerNumber = document.getElementById("playerNumber").value;
 
+    // select kutusundan değeri al
+    var countryOption = document.getElementById("countryOption").value;
+    // değere göre countries arrayini değiştir
+    if (countryOption == "big") {
+      var countries = ["Almanya", "Fransa", "İngiltere", "İtalya", "Amerika", "Japonya", "Sovyetler Birliği"];
+
+    } else if (countryOption == "all") {
+      var countries = ["Alamanya", "Türkiye", "Amerika", "İtalya", "Fransa", "İngiltere", "Uganda", "Portekiz", "Rusya", "İspanya"];
+      var countries = [
+        "Afganistan AFG",
+        "Arnavutluk ALB",
+        "Cezayir ALG",
+        "Andorra AND",
+        "Angola ANG",
+        "Arjantin ARG",
+        "Ermenistan ARM",
+        "Avustralya AST",
+        "Avusturya AUS",
+        "Azerbaycan AZR",
+        "Bahreyn BHR",
+        "Bangladeş BNG",
+        "Barbados BRB",
+        "Belarus BEL",
+        "Belçika BEL",
+        "Butan BHT",
+        "Bolivya BOL",
+        "Bosna-Hersek BOS",
+        "Botsvana BOT",
+        "Brezilya BRA",
+        "Brunei BRU",
+        "Bulgaristan BUL",
+        "Burma MYA",
+        "Burundi BUR",
+        "Kamboçya CAM",
+        "Kamerun CMR",
+        "Kanada CAN",
+        "Orta Afrika Cumhuriyeti CAF",
+        "Çad CHD",
+        "Şili CHL",
+        "Çin CHI",
+        "Kolombiya COL",
+        "Kosta Rika COS",
+        "Hırvatistan CRO",
+        "Küba CUB",
+        "Kıbrıs CYP",
+        "Çekoslovakya CZE",
+        "Danimarka DEN",
+        "Cibuti DJI",
+        "Dominik Cumhuriyeti DOM",
+        "Ekvador ECU",
+        "Mısır EGY",
+        "El Salvador SAL",
+        "Ekvator Ginesi EQG",
+        "Eritre ERI",
+        "Estonya EST",
+        "Etiyopya ETH",
+        "Finlandiya FIN",
+        "Fransa FRA",
+        "Gabon GAB",
+        "Gambiya GAM",
+        "Gürcistan GEO",
+        "Almanya GER",
+        "Gana GHA",
+        "Yunanistan GRE",
+        "Guatemala GUA",
+        "Gine GUI",
+        "Gine-Bissau GNB",
+        "Haiti HAI",
+        "Honduras HON",
+        "Macaristan HUN",
+        "İzlanda ICE",
+        "Hindistan IND",
+        "Endonezya INS",
+        "İran IRN",
+        "Irak IRQ",
+        "İrlanda IRE",
+        "İsrail ISR",
+        "İtalya ITA",
+        "Fildişi Sahili IVC",
+        "Jamaika JAM",
+        "Japonya JAP",
+        "Ürdün JOR",
+        "Kazakistan KAZ",
+        "Kenya KEN",
+        "Kore KOR",
+        "Kuveyt KUW",
+        "Kırgızistan KYR",
+        "Laos LAO",
+        "Letonya LAT",
+        "Lübnan LEB",
+        "Liberya LIB",
+        "Libya LBA",
+        "Lihtenştayn LIE",
+        "Litvanya LIT",
+        "Lüksemburg LUX",
+        "Makedonya MAC",
+        "Madagaskar MAD",
+        "Malavi MAW"];
+    }
+
+    // oyuncu sayısı kadar tekrarla
     for (var i = 0; i < playerNumber; i++) {
-      
+      // countries arrayinden rastgele bir ülke seç ve bir output alanına yazdır
       var randomIndex = Math.floor(Math.random() * countries.length);
       var randomCountry = countries[randomIndex];
-      document.getElementById("output").innerHTML += (i+1) + ". Oyuncu " + randomCountry + "<br>";
+      document.getElementById("output").innerHTML += (i+1) + ". " + randomCountry + "<br>";
       countries.splice(randomIndex, 1);
     }
   }
