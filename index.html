@@ -1,0 +1,26 @@
+<input type="number" id="playerNumber" placeholder="Oyuncu sayısı giriniz">
+<button id="calculate" onclick="showCountries()">Hesapla</button>
+<div id="output"></div>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  
+<script type="text/javascript">
+  var countries = ["Alamanya", "Türkiye", "Amerika", "İtalya", "Fransa", "İngiltere", "Uganda", "Portekiz", "Rusya", "İspanya"];
+  function showCountries() {
+    var playerNumber = document.getElementById("playerNumber").value;
+
+    for (var i = 0; i < playerNumber; i++) {
+      
+      var randomIndex = Math.floor(Math.random() * countries.length);
+      var randomCountry = countries[randomIndex];
+      document.getElementById("output").innerHTML += (i+1) + ". " + randomCountry + "<br>";
+      countries.splice(randomIndex, 1);
+    }
+  }
+</script>
