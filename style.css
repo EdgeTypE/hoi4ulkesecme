@@ -1,4 +1,9 @@
-
+#countryOption {
+    background-color: #fff;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #495057;
+  }
 
 #playerNumber { width: 200px; height: 40px; border: 2px solid black; border-radius: 10px; font-size: 20px; padding: 5px; }
 
