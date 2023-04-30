@@ -1,0 +1,7 @@
+
+
+#playerNumber { width: 200px; height: 40px; border: 2px solid black; border-radius: 10px; font-size: 20px; padding: 5px; }
+
+#calculate { width: 100px; height: 40px; background-color: blue; color: white; border: none; border-radius: 10px; font-size: 20px; margin-left: 10px; }
+
+#output { width: 300px; height: auto; background-color: green; color: white; border-radius: 10px; font-size: 20px; padding: 10px; margin-top: 10px; }
